@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PALM — Projetos de Alto Padrão</title>
+<meta name="description" content="PALM Projetos de Alto Padrão — escritório de arquitetura e projetos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+  <!-- =========================================================
+       PORTA — TELA INICIAL / ANIMAÇÃO DE ABERTURA
+       ========================================================= -->
+  <div id="door-hero">
+    <div class="brand-mark">PALM<span>Projetos de Alto Padrão</span></div>
+
+    <div class="facade-wrap" id="door-frame">
+      <!-- Ilustração da fachada, em tela cheia, com base nos 4 ângulos de referência enviados -->
+      <svg viewBox="0 90 1600 810" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F1E7D2"/>
+            <stop offset="1" stop-color="#E6D8B9"/>
+          </linearGradient>
+          <linearGradient id="telhado" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#DED6C2"/>
+            <stop offset="1" stop-color="#AFA07E"/>
+          </linearGradient>
+          <linearGradient id="telhadoPorch" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#D6CDB6"/>
+            <stop offset="1" stop-color="#A79974"/>
+          </linearGradient>
+          <linearGradient id="parede" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F4EFE4"/>
+            <stop offset="1" stop-color="#E9E1CE"/>
+          </linearGradient>
+          <radialGradient id="vidro" cx="50%" cy="35%" r="75%">
+            <stop offset="0" stop-color="#F6D9A0"/>
+            <stop offset="1" stop-color="#C79A55"/>
+          </radialGradient>
+          <linearGradient id="chao" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E7DFCB"/>
+            <stop offset="1" stop-color="#D7C9A6"/>
+          </linearGradient>
+          <linearGradient id="pilar" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#F2ECDA"/>
+            <stop offset="1" stop-color="#E2D6B6"/>
+          </linearGradient>
+          <clipPath id="clipTelhado">
+            <polygon points="340,340 640,235 960,235 1260,340"/>
+          </clipPath>
+          <clipPath id="clipTelhadoPorch">
+            <polygon points="520,404 755,320 845,320 1080,404"/>
+          </clipPath>
+        </defs>
+      
+        <!-- ceu (sem retangulo de fundo — o fundo da secao ja tem o gradiente creme, a ilustracao flutua sobre ele) -->
+        <ellipse cx="150" cy="90" rx="70" ry="16" fill="#FBF4E4" opacity=".55"/>
+        <ellipse cx="1430" cy="70" rx="80" ry="18" fill="#FBF4E4" opacity=".6"/>
+      
+        <!-- sebes discretas nas laterais -->
+        <ellipse cx="55" cy="738" rx="55" ry="22" fill="#5C6E4C" opacity=".8"/>
+        <ellipse cx="1545" cy="734" rx="58" ry="24" fill="#4F6142" opacity=".8"/>
+      
+        <!-- ===== telhado principal (hip roof) ===== -->
+        <polygon points="340,340 640,235 960,235 1260,340" fill="url(#telhado)"/>
+        <polygon points="640,235 960,235 946,246 654,246" fill="#8C7F62" opacity=".4"/>
+        <g clip-path="url(#clipTelhado)">
+          <g stroke="#8C7F62" stroke-width="2" opacity=".35">
+            <line x1="400" y1="338" x2="648" y2="243"/>
+            <line x1="455" y1="335" x2="686" y2="243"/>
+            <line x1="515" y1="332" x2="730" y2="243"/>
+            <line x1="575" y1="329" x2="775" y2="243"/>
+            <line x1="1200" y1="338" x2="952" y2="243"/>
+            <line x1="1145" y1="335" x2="914" y2="243"/>
+            <line x1="1085" y1="332" x2="870" y2="243"/>
+            <line x1="1025" y1="329" x2="825" y2="243"/>
+          </g>
+          <path d="M348,336 Q384,320 420,336 Q456,320 492,336 Q528,320 564,336 Q600,320 636,336"
+                fill="none" stroke="#948763" stroke-width="2" opacity=".45"/>
+          <path d="M1252,336 Q1216,320 1180,336 Q1144,320 1108,336 Q1072,320 1036,336 Q1000,320 964,336"
+                fill="none" stroke="#948763" stroke-width="2" opacity=".45"/>
+        </g>
+        <rect x="336" y="338" width="928" height="20" fill="#C7B993"/>
+        <rect x="336" y="358" width="928" height="6" fill="var(--dourado)" opacity=".55"/>
+      
+        <!-- corpo da fachada -->
+        <rect x="340" y="366" width="920" height="394" fill="url(#parede)"/>
+      
+        <!-- ===== telhado do alpendre (sobre a porta, mais baixo, acompanhando os pilares) ===== -->
+        <polygon points="520,404 755,320 845,320 1080,404" fill="url(#telhadoPorch)"/>
+        <polygon points="755,320 845,320 837,328 763,328" fill="#8C7F62" opacity=".45"/>
+        <g clip-path="url(#clipTelhadoPorch)">
+          <g stroke="#8C7F62" stroke-width="2" opacity=".35">
+            <line x1="590" y1="396" x2="758" y2="325"/>
+            <line x1="655" y1="390" x2="790" y2="325"/>
+            <line x1="1010" y1="396" x2="842" y2="325"/>
+            <line x1="945" y1="390" x2="810" y2="325"/>
+          </g>
+          <path d="M528,400 Q556,386 584,400 Q612,386 640,400 Q668,386 696,400"
+                fill="none" stroke="#948763" stroke-width="2" opacity=".45"/>
+          <path d="M1072,400 Q1044,386 1016,400 Q988,386 960,400 Q932,386 904,400"
+                fill="none" stroke="#948763" stroke-width="2" opacity=".45"/>
+        </g>
+        <rect x="516" y="402" width="564" height="16" fill="#C7B993"/>
+        <rect x="516" y="418" width="564" height="5" fill="var(--dourado)" opacity=".55"/>
+      
+        <!-- ===== pilares que ladeiam a porta (mais afastados, com vao livre para as luminarias) ===== -->
+        <!-- pilar esquerdo -->
+        <rect x="536" y="423" width="86" height="24" fill="#E7DBBE"/>
+        <rect x="548" y="447" width="62" height="281" fill="url(#pilar)"/>
+        <g stroke="#DCCFAF" stroke-width="2">
+          <line x1="567" y1="447" x2="567" y2="728"/>
+          <line x1="591" y1="447" x2="591" y2="728"/>
+        </g>
+        <rect x="536" y="728" width="86" height="32" fill="#E7DBBE"/>
+      
+        <!-- pilar direito -->
+        <rect x="978" y="423" width="86" height="24" fill="#E7DBBE"/>
+        <rect x="990" y="447" width="62" height="281" fill="url(#pilar)"/>
+        <g stroke="#DCCFAF" stroke-width="2">
+          <line x1="1009" y1="447" x2="1009" y2="728"/>
+          <line x1="1033" y1="447" x2="1033" y2="728"/>
+        </g>
+        <rect x="978" y="728" width="86" height="32" fill="#E7DBBE"/>
+      
+        <!-- janela, na parede a direita do pilar direito -->
+        <rect x="1090" y="470" width="130" height="170" fill="#211E17"/>
+        <rect x="1100" y="480" width="110" height="150" fill="url(#vidro)" opacity=".85"/>
+        <g stroke="#211E17" stroke-width="5">
+          <line x1="1155" y1="480" x2="1155" y2="630"/>
+          <line x1="1100" y1="555" x2="1210" y2="555"/>
+        </g>
+      
+        <!-- moldura / arquitrave da porta -->
+        <rect x="680" y="423" width="240" height="24" rx="2" fill="#E7DBBE"/>
+        <rect x="690" y="447" width="220" height="281" fill="#DED0AE"/>
+
+        <!-- bandeira fixa acima das folhas, como na foto real -->
+        <rect x="700" y="453" width="200" height="26" fill="#C9BB98" stroke="#00000022" stroke-width="1"/>
+        <rect x="700" y="479" width="200" height="6" fill="#DED0AE"/>
+      
+        <!-- vão da porta (sombra do interior, aparece quando as folhas abrem) -->
+        <rect id="vao-porta" x="712" y="485" width="176" height="233" fill="var(--verde-sombra)"/>
+      
+        <!-- luminarias (arandelas pretas com vidro ambar), na parede ao lado da porta -->
+        <g>
+          <rect x="640" y="486" width="22" height="6" fill="#1E1C17"/>
+          <rect id="lanterna-esq" x="642" y="490" width="18" height="58" rx="1" fill="#1E1C17"/>
+          <rect x="646" y="497" width="10" height="44" fill="#EFCB8C" opacity=".9"/>
+          <rect x="640" y="548" width="22" height="6" fill="#1E1C17"/>
+          <circle cx="651" cy="558" r="2.5" fill="#1E1C17"/>
+        </g>
+        <g>
+          <rect x="938" y="486" width="22" height="6" fill="#1E1C17"/>
+          <rect id="lanterna-dir" x="940" y="490" width="18" height="58" rx="1" fill="#1E1C17"/>
+          <rect x="944" y="497" width="10" height="44" fill="#EFCB8C" opacity=".9"/>
+          <rect x="938" y="548" width="22" height="6" fill="#1E1C17"/>
+          <circle cx="949" cy="558" r="2.5" fill="#1E1C17"/>
+        </g>
+      
+        <!-- arvore junto ao canto esquerdo -->
+        <rect x="452" y="616" width="6" height="90" fill="#8A7A5C"/>
+        <circle cx="455" cy="560" r="46" fill="#5E7049" opacity=".92"/>
+        <circle cx="420" cy="590" r="30" fill="#6C7C56" opacity=".9"/>
+        <circle cx="490" cy="588" r="28" fill="#4F6142" opacity=".9"/>
+      
+        <!-- arbustos na base dos pilares -->
+        <ellipse cx="579" cy="716" rx="42" ry="20" fill="#5C6E4C"/>
+        <ellipse cx="541" cy="722" rx="30" ry="16" fill="#6C7C56"/>
+        <ellipse cx="1021" cy="716" rx="42" ry="20" fill="#5C6E4C"/>
+        <ellipse cx="1059" cy="722" rx="30" ry="16" fill="#4F6142"/>
+      
+        <!-- chao / calcada -->
+        <rect x="0" y="760" width="1600" height="140" fill="url(#chao)"/>
+        <g stroke="#D2C4A0" stroke-width="2">
+          <line x1="200" y1="760" x2="200" y2="900"/>
+          <line x1="550" y1="760" x2="550" y2="900"/>
+          <line x1="900" y1="760" x2="900" y2="900"/>
+          <line x1="1250" y1="760" x2="1250" y2="900"/>
+        </g>
+      </svg>
+
+      <!-- porta ilustrada: overlay HTML posicionado sobre o vão desenhado acima, com painéis
+           proporcionais à porta real (painel superior maior + inferior menor, puxadores em barra) -->
+      <div class="door-leaf-wrap" id="door-leaf-wrap">
+        <div class="door-leaf left">
+          <div class="painel p1"></div>
+          <div class="painel p2"></div>
+          <div class="painel p3"></div>
+          <div class="macaneta"></div>
+        </div>
+        <div class="door-leaf right">
+          <div class="painel p1"></div>
+          <div class="painel p2"></div>
+          <div class="painel p3"></div>
+          <div class="macaneta"></div>
+        </div>
+      </div>
+      <div class="sconce-glow l"></div>
+      <div class="sconce-glow r"></div>
+    </div>
+
+    <button class="door-cta" id="door-cta">
+      Clique para entrar
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+
+  <!-- =========================================================
+       NAVEGAÇÃO
+       ========================================================= -->
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="#topo" class="logo">PALIM<small>Projetos de Alto Padrão</small></a>
+      <nav class="links" id="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#fundadores">Fundadores</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#local">Localização</a>
+        <a href="#contato">Contato</a>
+        <a href="cartao.html" class="nav-cartao">Cartão digital</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu"><span></span></button>
+    </div>
+  </header>
+
+  <div id="topo"></div>
+
+  <!-- =========================================================
+       SOBRE
+       ========================================================= -->
+  <section id="sobre">
+    <div class="container sobre-grid">
+      <div class="reveal">
+        <p class="eyebrow">Sobre o escritório</p>
+        <h2>Projetos pensados<br>com calma e precisão.</h2>
+      </div>
+      <div class="reveal">
+        <span class="field-tag">Campo de texto — Apresentação</span>
+        <div class="placeholder-field">
+          <b>[ Espaço reservado para a apresentação do escritório ]</b><br><br>
+          Escreva aqui um texto contando a história da PALIM, os valores e o que diferencia os projetos —
+          recomendamos entre <b>60 e 90 palavras</b>. Este espaço já está formatado e pronto para receber o texto final.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FUNDADORES (pai e filha)
+       ========================================================= -->
+  <section id="fundadores">
+    <div class="container fundadores-grid">
+      <div class="reveal">
+        <img src="assets/fundadores.jpg" alt="Fundadores do escritório PALM">
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Quem está à frente</p>
+        <h2>Uma parceria de família.</h2>
+        <div class="fundador-names">
+          <div>
+            <span class="fundador-nome">[ Nome do fundador ]</span>
+            <span class="fundador-cargo">[ Cargo — ex. Diretor / Sócio-fundador ]</span>
+          </div>
+          <div>
+            <span class="fundador-nome">[ Nome da fundadora ]</span>
+            <span class="fundador-cargo">[ Cargo — ex. Diretora / Sócia-fundadora ]</span>
+          </div>
+        </div>
+        <span class="field-tag">Campo de texto — Biografia</span>
+        <div class="placeholder-field">
+          <b>[ Espaço reservado para a biografia de pai e filha ]</b><br><br>
+          Conte brevemente a trajetória de cada um, a relação entre eles e a visão que guia os projetos da PALM —
+          sugerimos até <b>40 palavras</b> por pessoa.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       EQUIPE
+       ========================================================= -->
+  <section id="equipe">
+    <div class="container">
+      <div class="reveal" style="max-width:640px; margin-bottom:2.6rem;">
+        <p class="eyebrow">Nossa equipe</p>
+        <h2>As pessoas por trás<br>de cada projeto.</h2>
+      </div>
+      <div class="reveal equipe-photo">
+        <img src="assets/equipe.jpg" alt="Equipe do escritório PALM">
+      </div>
+      <div class="equipe-grid reveal">
+        <div class="equipe-card">
+          <span class="field-tag">Funcionária 1</span>
+          <span class="nome-placeholder">[ Nome completo ]</span>
+          <div class="placeholder-field">[ Cargo ] — breve descrição, até <b>15 palavras</b>.</div>
+        </div>
+        <div class="equipe-card">
+          <span class="field-tag">Funcionária 2</span>
+          <span class="nome-placeholder">[ Nome completo ]</span>
+          <div class="placeholder-field">[ Cargo ] — breve descrição, até <b>15 palavras</b>.</div>
+        </div>
+        <div class="equipe-card">
+          <span class="field-tag">Fundador</span>
+          <span class="nome-placeholder">[ Nome completo ]</span>
+          <div class="placeholder-field">[ Cargo ] — breve descrição, até <b>15 palavras</b>.</div>
+        </div>
+        <div class="equipe-card">
+          <span class="field-tag">Funcionária 3</span>
+          <span class="nome-placeholder">[ Nome completo ]</span>
+          <div class="placeholder-field">[ Cargo ] — breve descrição, até <b>15 palavras</b>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROJETOS
+       -----------------------------------------------------------
+       COMO ADICIONAR UM PROJETO NOVO:
+       1) Recorte a foto do projeto em proporção 4:3 (paisagem),
+          tamanho recomendado 1200x900px (mínimo 800x600px),
+          formato .jpg otimizado para web (até ~300kb).
+       2) Salve o arquivo em: assets/projetos/nome-do-projeto.jpg
+       3) Duplique um bloco ".projeto-card" abaixo, troque o
+          placeholder pela tag <img> comentada dentro de cada card
+          (o comentário já traz o markup pronto) e preencha o
+          nome/local/categoria do projeto.
+       4) Para a foto de capa que abre a galeria (se houver),
+          use proporção 16:9, mínimo 1600x900px.
+       ========================================================= -->
+  <section id="projetos">
+    <div class="container">
+      <div class="reveal" style="max-width:640px; margin-bottom:2.6rem;">
+        <p class="eyebrow">Portfólio</p>
+        <h2>Projetos que já<br>ganharam forma.</h2>
+      </div>
+
+      <div class="projetos-grid reveal">
+
+        <!-- ---- Projeto 1 ---------------------------------------
+             Quando tiver a foto, troque o <div class="projeto-placeholder">…</div>
+             por:
+             <img src="assets/projetos/projeto-01.jpg" alt="[ Nome do projeto ] — [ cidade/bairro ]">
+             Recorte 4:3 · 1200x900px
+        ----------------------------------------------------------- -->
+        <button type="button" class="projeto-card" data-projeto="0">
+          <div class="projeto-img">
+            <img src="assets/projetos/projeto-01-1.jpg" alt="[ Nome do projeto ] — [ cidade/bairro ]">
+          </div>
+          <div class="projeto-info">
+            <span class="field-tag">Projeto 01</span>
+            <span class="projeto-nome">[ Nome do projeto ]</span>
+            <span class="projeto-meta">[ Categoria — ex. Residencial ] · [ Cidade ]</span>
+          </div>
+        </button>
+
+        <!-- ---- Projeto 2 --------------------------------------- -->
+        <button type="button" class="projeto-card" data-projeto="1">
+          <div class="projeto-img">
+            <img src="assets/projetos/projeto-02-1.jpg" alt="[ Nome do projeto ] — [ cidade/bairro ]">
+          </div>
+          <div class="projeto-info">
+            <span class="field-tag">Projeto 02</span>
+            <span class="projeto-nome">[ Nome do projeto ]</span>
+            <span class="projeto-meta">[ Categoria — ex. Comercial ] · [ Cidade ]</span>
+          </div>
+        </button>
+
+        <!-- ---- Projeto 3 --------------------------------------- -->
+        <button type="button" class="projeto-card" data-projeto="2">
+          <div class="projeto-img">
+            <img src="assets/projetos/projeto-03-1.jpg" alt="[ Nome do projeto ] — [ cidade/bairro ]">
+          </div>
+          <div class="projeto-info">
+            <span class="field-tag">Projeto 03</span>
+            <span class="projeto-nome">[ Nome do projeto ]</span>
+            <span class="projeto-meta">[ Categoria — ex. Interiores ] · [ Cidade ]</span>
+          </div>
+        </button>
+
+        <!-- ---- Projeto 4 --------------------------------------- -->
+        <a class="projeto-card" href="#contato">
+          <div class="projeto-img">
+            <div class="projeto-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="1.5"/><circle cx="9" cy="10" r="2"/><path d="m3 17 5-5 4 4 3-3 6 6"/></svg>
+              <span>Foto do projeto 4<br><small>recorte 4:3 · 1200×900px</small></span>
+            </div>
+          </div>
+          <div class="projeto-info">
+            <span class="field-tag">Projeto 04</span>
+            <span class="projeto-nome">[ Nome do projeto ]</span>
+            <span class="projeto-meta">[ Categoria ] · [ Cidade ]</span>
+          </div>
+        </a>
+
+        <!-- ---- Projeto 5 --------------------------------------- -->
+        <a class="projeto-card" href="#contato">
+          <div class="projeto-img">
+            <div class="projeto-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="1.5"/><circle cx="9" cy="10" r="2"/><path d="m3 17 5-5 4 4 3-3 6 6"/></svg>
+              <span>Foto do projeto 5<br><small>recorte 4:3 · 1200×900px</small></span>
+            </div>
+          </div>
+          <div class="projeto-info">
+            <span class="field-tag">Projeto 05</span>
+            <span class="projeto-nome">[ Nome do projeto ]</span>
+            <span class="projeto-meta">[ Categoria ] · [ Cidade ]</span>
+          </div>
+        </a>
+
+        <!-- ---- Projeto 6 --------------------------------------- -->
+        <a class="projeto-card" href="#contato">
+          <div class="projeto-img">
+            <div class="projeto-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="1.5"/><circle cx="9" cy="10" r="2"/><path d="m3 17 5-5 4 4 3-3 6 6"/></svg>
+              <span>Foto do projeto 6<br><small>recorte 4:3 · 1200×900px</small></span>
+            </div>
+          </div>
+          <div class="projeto-info">
+            <span class="field-tag">Projeto 06</span>
+            <span class="projeto-nome">[ Nome do projeto ]</span>
+            <span class="projeto-meta">[ Categoria ] · [ Cidade ]</span>
+          </div>
+        </a>
+
+        <!-- Para adicionar mais projetos, copie um bloco <a class="projeto-card">…</a>
+             inteiro e cole aqui dentro do mesmo .projetos-grid. -->
+
+      </div>
+    </div>
+
+    <!-- =========================================================
+         LIGHTBOX DO PORTFÓLIO (estilo Instagram)
+         Cada projeto tem um array de fotos em PROJETOS_FOTOS (js/script.js).
+         Clicar num card abre aqui; as setinhas trocam de foto dentro
+         do mesmo projeto; "1/3" mostra a posição na galeria.
+         ========================================================= -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galeria do projeto">
+      <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+      <div class="lightbox-shell">
+        <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Fechar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+
+        <button type="button" class="lightbox-arrow prev" id="lightbox-prev" aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+
+        <div class="lightbox-frame">
+          <img id="lightbox-img" src="" alt="">
+          <div class="lightbox-dots" id="lightbox-dots"></div>
+        </div>
+
+        <button type="button" class="lightbox-arrow next" id="lightbox-next" aria-label="Próxima foto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        <div class="lightbox-caption">
+          <span class="lightbox-nome" id="lightbox-nome"></span>
+          <span class="lightbox-meta" id="lightbox-meta"></span>
+          <span class="lightbox-count" id="lightbox-count"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       LOCALIZAÇÃO
+       ========================================================= -->
+  <section id="local">
+    <div class="container">
+      <div class="reveal" style="max-width:640px; margin-bottom:2.6rem;">
+        <p class="eyebrow">Onde estamos</p>
+        <h2>Venha nos visitar.</h2>
+      </div>
+      <div class="local-grid reveal">
+        <div class="local-card">
+          <p class="endereco">R. José Fabri<br>Vila Fabri, Colina – SP<br>CEP 14772-052</p>
+          <div class="local-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>[ Horário de atendimento — ex. Segunda a sexta, 9h às 18h ]</span>
+          </div>
+          <div class="local-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>[ Telefone / WhatsApp ]</span>
+          </div>
+          <div class="local-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+            <span>[ contato@palim.com.br ]</span>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=R.+Jos%C3%A9+Fabri,+Vila+Fabri,+Colina+-+SP,+14772-052&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da localização PALM"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTATO
+       ========================================================= -->
+  <section id="contato">
+    <div class="container contato-grid">
+      <div class="reveal">
+        <p class="eyebrow">Fale conosco</p>
+        <h2>Vamos conversar<br>sobre o seu projeto.</h2>
+      </div>
+      <form class="contato-form reveal" id="form-contato">
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        </div>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(17) 99999-9999">
+        </div>
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre o que procura (até 50 palavras)"></textarea>
+          <span class="hint">Espaço reservado — até 50 palavras.</span>
+        </div>
+        <button type="submit" class="btn-enviar">Enviar mensagem</button>
+        <p class="form-msg" id="form-msg"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <a href="#topo" class="logo">PALM</a>
+      <span>R. José Fabri, Vila Fabri, Colina – SP, 14772-052</span>
+      <a href="cartao.html" class="footer-cartao">Cartão de visita digital →</a>
+      <span>&copy; <span id="ano"></span> PALIM Projetos de Alto Padrão</span>
+    </div>
+  </footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

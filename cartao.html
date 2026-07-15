@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PALM — Cartão de Visita Digital</title>
+<meta name="description" content="Cartão de visita digital PALM Projetos de Alto Padrão. Salve o contato, ligue, chame no WhatsApp ou veja a localização.">
+<meta name="theme-color" content="#4B5A42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/cartao.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       CARTÃO DE VISITA DIGITAL
+       -----------------------------------------------------------
+       Pensado para ser aberto no celular (link direto ou QR Code).
+       Para trocar a foto de perfil, salve o arquivo em
+       assets/perfil.jpg — recorte QUADRADO (1:1), mínimo 500x500px,
+       rosto centralizado, e troque o .foto-placeholder abaixo pela
+       tag <img> comentada dentro dela.
+
+       Para editar os dados salvos no "Adicionar aos contatos",
+       ajuste as constantes no topo do arquivo js/cartao.js —
+       elas alimentam o botão de download do cartão (.vcf).
+       ========================================================= -->
+
+  <main class="cartao">
+
+    <div class="cartao-card">
+
+      <div class="cartao-topo">
+        <span class="cartao-marca">PALIM</span>
+        <span class="cartao-marca-sub">Projetos de Alto Padrão</span>
+      </div>
+
+      <!-- Foto de perfil — troque pelo <img src="assets/perfil.jpg" alt="[ Nome ]"> quando tiver a foto (recorte 1:1) -->
+      <div class="foto-placeholder" id="foto-perfil">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+      </div>
+
+      <h1 class="cartao-nome">[ Nome completo ]</h1>
+      <p class="cartao-cargo">[ Cargo — ex. Diretor / Sócio-fundador ]</p>
+
+      <div class="cartao-acoes">
+        <a class="acao-btn" id="btn-salvar-contato" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>
+          Salvar contato
+        </a>
+
+        <div class="acao-grid">
+          <a class="acao-item" href="tel:+5517999999999">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Ligar</span>
+          </a>
+          <a class="acao-item" href="https://wa.me/5517999999999" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.5 8.5 0 0 1-12.36 7.56L3 20l1.03-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5c.3 2.4 2.6 4.7 5 5"/></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a class="acao-item" href="mailto:contato@palm.com.br">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 6h20v12H2z"/><path d="m2 6 10 7 10-7"/></svg>
+            <span>E-mail</span>
+          </a>
+          <a class="acao-item" href="https://www.google.com/maps?q=R.+Jos%C3%A9+Fabri,+Vila+Fabri,+Colina+-+SP,+14772-052" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Endereço</span>
+          </a>
+          <a class="acao-item" href="index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+            <span>Site</span>
+          </a>
+          <a class="acao-item" href="https://instagram.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cartao-endereco">
+        <p>R. José Fabri, Vila Fabri<br>Colina – SP, CEP 14772-052</p>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="cartao-voltar">← Voltar ao site</a>
+  </main>
+
+<script src="js/cartao.js"></script>
+</body>
+</html>
